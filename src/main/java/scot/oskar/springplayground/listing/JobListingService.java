@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import scot.oskar.springplayground.listing.internal.dto.JobListingCreateRequest;
+import scot.oskar.springplayground.listing.internal.dto.JobListingUpdateRequest;
 import scot.oskar.springplayground.listing.internal.persistence.JobListingEntity;
 import scot.oskar.springplayground.listing.internal.persistence.JobListingRepository;
 
@@ -35,6 +36,28 @@ public class JobListingService {
         );
         this.eventPublisher.publishEvent(new JobListingCreatedEvent(listingEntity.getId()));
         return this.toListingView(listingEntity);
+    }
+
+    @Transactional
+    public ListingView updateListing(UUID listingId, JobListingUpdateRequest request) {
+        final var listingEntity = this.repository.findById(listingId)
+                .orElseThrow(() -> new NoSuchElementException("Listing %s not found".formatted(listingId)));
+
+        listingEntity.setName(request.name());
+        listingEntity.setDescription(request.description());
+
+        this.eventPublisher.publishEvent(new JobListingUpdatedEvent(listingId));
+
+        return this.toListingView(listingEntity);
+    }
+
+    @Transactional
+    public void deleteListing(UUID listingId) {
+        final var listingEntity = this.repository.findById(listingId)
+                .orElseThrow(() -> new NoSuchElementException("Listing %s not found".formatted(listingId)));
+
+        this.repository.delete(listingEntity);
+        this.eventPublisher.publishEvent(new JobListingDeletedEvent(listingId));
     }
 
     private ListingView toListingView(JobListingEntity entity){
