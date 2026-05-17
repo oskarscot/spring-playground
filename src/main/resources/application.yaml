@@ -2,13 +2,12 @@ spring:
   application:
     name: SpringPlayground
 
-
   threads:
     virtual:
       enabled: true
   jpa:
     open-in-view: false
-  mvc:
-    apiversion:
-      use:
-        path-segment: 0
+    hibernate:
+      ddl-auto: create-drop
+  flyway:
+    enabled: false

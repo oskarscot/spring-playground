@@ -12,7 +12,7 @@ import java.net.URI;
 import java.util.UUID;
 
 @RestController
-@RequestMapping(value = "/listings", version = "1.0")
+@RequestMapping("/listings")
 class JobListingController {
 
     private final JobListingService jobListingService;
