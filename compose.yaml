@@ -8,8 +8,48 @@ services:
   postgres:
     image: 'postgres:latest'
     environment:
-      - 'POSTGRES_DB=springdeed'
-      - 'POSTGRES_PASSWORD=secret'
-      - 'POSTGRES_USER=springdeed'
+      POSTGRES_DB: ${PG_DB}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_USER: ${PG_USER}
     ports:
       - '5432'
+  postgresql-keycloak:
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${PG_DB_KEYCLOAK}
+      POSTGRES_PASSWORD: ${PG_PASSWORD_KEYCLOAK}
+      POSTGRES_USER: ${PG_USER_KEYCLOAK}
+    healthcheck:
+      interval: 30s
+      retries: 5
+      start_period: 20s
+      test:
+        - CMD-SHELL
+        - pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}
+      timeout: 5s
+    image: docker.io/library/postgres:16-alpine
+    restart: unless-stopped
+    volumes:
+      - keycloak-db:/var/lib/postgresql/data
+  keycloak:
+    command: start-dev
+    depends_on:
+      postgresql-keycloak:
+        condition: service_healthy
+    env_file:
+      - .env
+    environment:
+      KC_BOOTSTRAP_ADMIN_USERNAME: ${KEYCLOAK_ADMIN}
+      KC_BOOTSTRAP_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgresql-keycloak:5432/${PG_DB_KEYCLOAK}
+      KC_DB_USERNAME: ${PG_USER_KEYCLOAK}
+      KC_DB_PASSWORD: ${PG_PASSWORD_KEYCLOAK}
+    image: quay.io/keycloak/keycloak:26.4
+    ports:
+      - '8081:8080'
+    restart: unless-stopped
+volumes:
+  keycloak-db:
+    driver: local
