@@ -35,4 +35,9 @@ out/
 
 ### VS Code ###
 .vscode/
-/.env
+.env
+.env.local
+
+### Node ###
+node_modules/
+dist/
