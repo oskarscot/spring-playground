@@ -1,6 +1,6 @@
-# Spring Playground
+# Springdeed
 
-A prototype and learning playground exploring patterns for a future **production-ready HR platform**.
+A prototype indeed clone and learning playground exploring patterns for a future **production-ready job marketplace platform**.
 
 This repo is where I experiment with Spring Boot, Modulith, JPA, and related tooling before they land in the real product. Code here is intentionally rough, it's about learning the idioms, not shipping features.
 

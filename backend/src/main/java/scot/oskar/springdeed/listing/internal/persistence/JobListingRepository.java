@@ -1,4 +1,4 @@
-package scot.oskar.springplayground.listing.internal.persistence;
+package scot.oskar.springdeed.listing.internal.persistence;
 
 import java.util.UUID;
 import org.springframework.data.repository.ListCrudRepository;

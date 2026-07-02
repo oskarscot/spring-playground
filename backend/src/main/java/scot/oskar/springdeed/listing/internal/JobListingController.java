@@ -1,12 +1,12 @@
-package scot.oskar.springplayground.listing.internal;
+package scot.oskar.springdeed.listing.internal;
 
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import scot.oskar.springplayground.listing.JobListingService;
-import scot.oskar.springplayground.listing.ListingView;
-import scot.oskar.springplayground.listing.internal.dto.JobListingCreateRequest;
-import scot.oskar.springplayground.listing.internal.dto.JobListingUpdateRequest;
+import scot.oskar.springdeed.listing.JobListingService;
+import scot.oskar.springdeed.listing.ListingView;
+import scot.oskar.springdeed.listing.internal.dto.JobListingCreateRequest;
+import scot.oskar.springdeed.listing.internal.dto.JobListingUpdateRequest;
 
 import java.net.URI;
 import java.util.UUID;

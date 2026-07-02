@@ -1,4 +1,4 @@
-package scot.oskar.springplayground.listing;
+package scot.oskar.springdeed.listing;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -6,10 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
 import org.springframework.modulith.test.ApplicationModuleTest;
 import org.springframework.modulith.test.Scenario;
-import scot.oskar.springplayground.PostgresConfiguration;
-import scot.oskar.springplayground.listing.internal.dto.JobListingCreateRequest;
-import scot.oskar.springplayground.listing.internal.dto.JobListingUpdateRequest;
-import scot.oskar.springplayground.listing.internal.persistence.JobListingRepository;
+import scot.oskar.springdeed.PostgresConfiguration;
+import scot.oskar.springdeed.listing.internal.dto.JobListingCreateRequest;
+import scot.oskar.springdeed.listing.internal.dto.JobListingUpdateRequest;
+import scot.oskar.springdeed.listing.internal.persistence.JobListingRepository;
 
 @ApplicationModuleTest
 @Import(PostgresConfiguration.class)

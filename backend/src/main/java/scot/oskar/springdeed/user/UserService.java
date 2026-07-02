@@ -1,7 +1,7 @@
-package scot.oskar.springplayground.user;
+package scot.oskar.springdeed.user;
 
 import org.springframework.stereotype.Service;
-import scot.oskar.springplayground.user.internal.persistence.UserRepository;
+import scot.oskar.springdeed.user.internal.persistence.UserRepository;
 
 @Service
 public class UserService {

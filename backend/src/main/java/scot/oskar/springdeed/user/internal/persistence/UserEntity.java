@@ -1,4 +1,4 @@
-package scot.oskar.springplayground.user.internal.persistence;
+package scot.oskar.springdeed.user.internal.persistence;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

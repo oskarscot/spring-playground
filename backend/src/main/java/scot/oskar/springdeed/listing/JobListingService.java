@@ -1,12 +1,12 @@
-package scot.oskar.springplayground.listing;
+package scot.oskar.springdeed.listing;
 
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import scot.oskar.springplayground.listing.internal.dto.JobListingCreateRequest;
-import scot.oskar.springplayground.listing.internal.dto.JobListingUpdateRequest;
-import scot.oskar.springplayground.listing.internal.persistence.JobListingEntity;
-import scot.oskar.springplayground.listing.internal.persistence.JobListingRepository;
+import scot.oskar.springdeed.listing.internal.dto.JobListingCreateRequest;
+import scot.oskar.springdeed.listing.internal.dto.JobListingUpdateRequest;
+import scot.oskar.springdeed.listing.internal.persistence.JobListingEntity;
+import scot.oskar.springdeed.listing.internal.persistence.JobListingRepository;
 
 import java.util.NoSuchElementException;
 import java.util.UUID;

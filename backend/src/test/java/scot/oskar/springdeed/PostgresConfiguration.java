@@ -1,4 +1,4 @@
-package scot.oskar.springplayground;
+package scot.oskar.springdeed;
 
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.testcontainers.service.connection.ServiceConnection;

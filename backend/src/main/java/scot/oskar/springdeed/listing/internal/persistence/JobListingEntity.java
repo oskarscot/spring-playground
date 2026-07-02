@@ -1,4 +1,4 @@
-package scot.oskar.springplayground.listing.internal.persistence;
+package scot.oskar.springdeed.listing.internal.persistence;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

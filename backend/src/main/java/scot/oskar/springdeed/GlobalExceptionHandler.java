@@ -1,4 +1,4 @@
-package scot.oskar.springplayground;
+package scot.oskar.springdeed;
 
 import org.jspecify.annotations.NonNull;
 import org.jspecify.annotations.Nullable;

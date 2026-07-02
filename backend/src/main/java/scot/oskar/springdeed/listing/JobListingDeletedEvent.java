@@ -1,4 +1,4 @@
-package scot.oskar.springplayground.listing;
+package scot.oskar.springdeed.listing;
 
 import java.util.UUID;
 

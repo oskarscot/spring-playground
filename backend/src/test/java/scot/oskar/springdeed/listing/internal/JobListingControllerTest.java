@@ -1,4 +1,4 @@
-package scot.oskar.springplayground.listing.internal;
+package scot.oskar.springdeed.listing.internal;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,10 +7,10 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import scot.oskar.springplayground.GlobalExceptionHandler;
-import scot.oskar.springplayground.listing.JobListingService;
-import scot.oskar.springplayground.listing.ListingView;
-import scot.oskar.springplayground.listing.internal.dto.JobListingCreateRequest;
+import scot.oskar.springdeed.GlobalExceptionHandler;
+import scot.oskar.springdeed.listing.JobListingService;
+import scot.oskar.springdeed.listing.ListingView;
+import scot.oskar.springdeed.listing.internal.dto.JobListingCreateRequest;
 
 import java.time.LocalDateTime;
 import java.util.NoSuchElementException;

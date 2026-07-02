@@ -1,4 +1,4 @@
-package scot.oskar.springplayground.user.internal.persistence;
+package scot.oskar.springdeed.user.internal.persistence;
 
 import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.stereotype.Repository;
