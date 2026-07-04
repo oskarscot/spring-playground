@@ -1,6 +1,6 @@
 spring:
   application:
-    name: SpringPlayground
+    name: Springdeed
 
   docker:
     compose:
@@ -15,3 +15,9 @@ spring:
       ddl-auto: create-drop
   flyway:
     enabled: false
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8081/realms/springdeed/.well-known/openid-configuration
