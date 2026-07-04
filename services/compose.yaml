@@ -12,7 +12,7 @@ services:
       POSTGRES_PASSWORD: ${PG_PASSWORD}
       POSTGRES_USER: ${PG_USER}
     ports:
-      - '5432'
+      - '5432:5432'
   postgresql-keycloak:
     env_file:
       - .env
@@ -30,6 +30,8 @@ services:
       timeout: 5s
     image: docker.io/library/postgres:16-alpine
     restart: unless-stopped
+    labels:
+      org.springframework.boot.ignore: true
     volumes:
       - keycloak-db:/var/lib/postgresql/data
   keycloak:
@@ -50,6 +52,8 @@ services:
     ports:
       - '8081:8080'
     restart: unless-stopped
+    labels:
+      org.springframework.boot.readiness-check.tcp.disable: true
 volumes:
   keycloak-db:
     driver: local

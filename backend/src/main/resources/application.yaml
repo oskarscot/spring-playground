@@ -4,7 +4,7 @@ spring:
 
   docker:
     compose:
-      file: ../services/compose.yaml
+      file: ./services/compose.yaml
 
   threads:
     virtual:
@@ -20,4 +20,4 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8081/realms/springdeed/.well-known/openid-configuration
+          issuer-uri: http://localhost:8081/realms/springdeed
