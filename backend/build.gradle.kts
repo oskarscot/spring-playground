@@ -27,11 +27,13 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
     implementation("org.flywaydb:flyway-database-postgresql")
     implementation("org.springframework.modulith:spring-modulith-starter-core")
-    implementation("org.springframework.modulith:spring-modulith-starter-jpa")
+    implementation("org.springframework.modulith:spring-modulith-starter-jpa") {
+        exclude(group = "org.springframework.modulith", module = "spring-modulith-events-jpa")
+    }
+    implementation("org.springframework.modulith:spring-modulith-events-jdbc")
     implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-oauth2-resource-server")
-
     developmentOnly("org.springframework.boot:spring-boot-docker-compose")
 
     runtimeOnly("org.postgresql:postgresql")

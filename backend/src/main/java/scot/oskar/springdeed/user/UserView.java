@@ -7,6 +7,6 @@ public record UserView(
         UUID id,
         String username,
         String email,
-        LocalDateTime creationTimestamp,
-        LocalDateTime updateTimestamp
+        LocalDateTime createdAt,
+        LocalDateTime updatedAt
 ) { }

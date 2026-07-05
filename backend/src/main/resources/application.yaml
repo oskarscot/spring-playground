@@ -12,12 +12,19 @@ spring:
   jpa:
     open-in-view: false
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: validate
   flyway:
-    enabled: false
+    enabled: true
 
   security:
     oauth2:
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8081/realms/springdeed
+  modulith:
+    runtime:
+      flyway-enabled: false
+    events:
+      jdbc:
+        schema-initialization:
+          enabled: true
